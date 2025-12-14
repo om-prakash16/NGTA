@@ -20,15 +20,16 @@ This guide covers how to deploy the **NGTA Stock Analyzer** to production using 
     -   **Root Directory**: `Backend` (Important!)
     -   **Runtime**: `Python 3`
     -   **Build Command**: `pip install -r requirements.txt`
-    -   **Start Command**: `gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app`
+    -   **Build Command**: `pip install -r requirements.txt`
+    -   **Start Command**: `gunicorn -w 1 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:10000`
 5.  **Environment Variables**:
     -   Go to the **Environment** tab.
     -   Add `PYTHON_VERSION`: `3.10.0` (or your local version)
     -   Add `ALLOWED_ORIGINS`: `*` (initially, then update with Vercel URL later)
     -   Add `ALLOWED_HOSTS`: `*`
-    -   **Add `SECRET_KEY`**: Generate a strong random string.
-    -   **Add `ADMIN_EMAIL`**: Your admin email address.
-    -   **Add `ADMIN_PASSWORD`**: Your strong admin password.
+    -   Add `ALLOWED_HOSTS`: `*`
+    -   **Add `DEBUG`**: `False` (Important for security)
+    -   *(Auth variables formerly required are no longer needed)*
 6.  **Deploy Service**: Click **Create Web Service**.
 7.  **Copy URL**: Once deployed, copy the service URL (e.g., `https://ngta-backend.onrender.com`).
 

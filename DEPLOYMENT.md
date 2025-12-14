@@ -21,7 +21,7 @@ This guide covers how to deploy the **NGTA Stock Analyzer** to production using 
     -   **Runtime**: `Python 3`
     -   **Build Command**: `pip install -r requirements.txt`
     -   **Build Command**: `pip install -r requirements.txt`
-    -   **Start Command**: `gunicorn -w 1 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:10000`
+    -   **Start Command**: `gunicorn -w 1 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:10000 --max-requests 300 --timeout 120`
 5.  **Environment Variables**:
     -   Go to the **Environment** tab.
     -   Add `PYTHON_VERSION`: `3.10.0` (or your local version)

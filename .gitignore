@@ -1,0 +1,27 @@
+# Python virtual environment
+.venv/
+Backend/venv/
+venv/
+node_modules/
+
+# Python cache
+**/__pycache__/
+*.pyc
+*.pyo
+
+# Next.js / React junk
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/dist/
+frontend/build/
+
+# Secrets
+.env
+.env.*
+
+# OS + Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+yfinance
+pandas
+numpy
+pydantic
+python-dotenv
+httpx
+
+pytz
+gunicorn
+
+
+slowapi
+

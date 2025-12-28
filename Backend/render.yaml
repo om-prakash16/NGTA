@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ngta-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 1 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: ALLOWED_ORIGINS
+        value: "*" # Update this with your Vercel URL after deploying frontend 
+      - key: ALLOWED_HOSTS
+        value: "*"
